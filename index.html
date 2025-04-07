@@ -74,7 +74,6 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://i.imgur.com/UMbPQ2F.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -136,6 +135,70 @@
   text-align: center;
   color: #e91e63;
 }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffe6eb;
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #e91e63;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fondito decorativo con corazones usando ::before */
+.modal::before {
+  content: "💖 💕 💗 💓 💞 💘 ❤️ 💝 ";
+  font-size: 4rem;
+  color: rgba(233, 30, 99, 0.2);
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  animation: float-hearts 10s linear infinite;
+  white-space: nowrap;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animación de fondo flotante decorativo */
+@keyframes float-hearts {
+  0% { transform: translateX(0) rotate(-15deg); }
+  100% { transform: translateX(-50%) rotate(-15deg); }
+}
+
+/* Cupón con animación de flotación */
+#cupon {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #fff0f5;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 15px #e91e63;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  text-align: center;
+  color: #e91e63;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 
   </style>
 </head>
